@@ -18,15 +18,15 @@ public class CustomerServiceImp implements CustomerService{
         return customerRepository.findAll();
     }
 
-    @Override
-    public boolean deleteCustomerById(String customerName) throws CustomerNotFoundException {
-        if(customerRepository.findById(customerName).isEmpty()){
-            throw new CustomerNotFoundException();
-        }else {
-            customerRepository.deleteById(customerName);
-            return true;
-        }
-    }
+//    @Override
+//    public boolean deleteCustomerById(String customerName) throws CustomerNotFoundException {
+//        if(customerRepository.findById(customerName).isEmpty()){
+//            throw new CustomerNotFoundException();
+//        }else {
+//            customerRepository.deleteById(customerName);
+//            return true;
+//        }
+//    }
 
     @Override
     public Customer checkLogin(Customer customer) {

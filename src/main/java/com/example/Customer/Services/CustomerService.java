@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CustomerService {
     List<Customer> getAllCustomer();
-    boolean deleteCustomerById(String customerName) throws CustomerNotFoundException;
+//    boolean deleteCustomerById(String customerName) throws CustomerNotFoundException;
     Customer checkLogin(Customer customer);
     Customer insertCustomer(Customer customer) throws CustomerAlreadyExsistException;
 }
