@@ -18,12 +18,12 @@ public class CustomerController {
     @Autowired
     SecurityTokenGenerator securityTokenGenerator;
 
-    //http.localhost:4444/api/customer/v1/register
+    //http.localhost:5555/api/customer/v1/register
     @PostMapping("/register")
     public ResponseEntity<?> registerCustomer(@RequestBody Customer customer) throws CustomerAlreadyExsistException {
         return new ResponseEntity<>(customerService.insertCustomer(customer), HttpStatus.CREATED);
     }
-    //http.localhost:4444/api/customer/v1/login
+    //http.localhost:5555/api/customer/v1/login
     @GetMapping("/login")
     public ResponseEntity<?> loginCustomer(@RequestBody Customer customer){
         Customer recivedCustomer =customerService.checkLogin(customer);
@@ -33,13 +33,9 @@ public class CustomerController {
             return new ResponseEntity<>("The Authentication was failed", HttpStatus.EXPECTATION_FAILED);
         }
     }
-    //http.localhost:4444/api/customer/v1/customers
+    //http.localhost:5555/api/customer/v1/customers
     @GetMapping("/customers")
     public ResponseEntity<?> getCustomers(){
         return new ResponseEntity<>(customerService.getAllCustomer(), HttpStatus.OK);
     }
-//    @DeleteMapping("/delete/{customerName}")
-//    public ResponseEntity<?> getCustomer(@PathVariable String customerName) throws CustomerNotFoundException {
-//        return new ResponseEntity<>(customerService.deleteCustomerById(customerName), HttpStatus.OK);
-//    }
 }
